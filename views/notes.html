@@ -1,0 +1,12 @@
+<h4 ng-if="!mc.selected.notes.length">No notes for {{ mc.selected.name }}, yet !!</h4>
+<md-content>
+    <md-card ng-repeat="note in mc.selected.notes | orderBy: '-date':true">
+        <md-card-content>
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.date | date: 'dd/MM/yyyy' }}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="mc.removeNote(note)">Remove</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

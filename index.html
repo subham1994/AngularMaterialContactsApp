@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ContactManagerApp">
+    
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+
+    
+    <body ng-cloak layout="row" ng-controller="mainController as mc">
+      
+        <div ng-include="'views/sidenav.html'" layout="vertical" flex-gt-md="20"></div>
+
+        <div layout="column" flex>
+            <div ng-include="'views/toolbar-header.html'"></div>
+            <md-content id="content">
+                <div ng-include="'views/main-content.html'"></div>
+                <md-tabs md-dynamic-height md-stretch-tabs="always" md-selected="mc.selectedTab">
+                    <md-tab label="Bio">
+                        <div ng-include="'views/bio.html'"></div>
+                    </md-tab>
+                    <md-tab label="Notes">
+                        <div ng-include="'views/notes.html'"></div>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
+
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+        <!-- Angular Material Library -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+        <!-- Your application bootstrap  -->
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="controllers/mainController.js"></script>
+        <script type="text/javascript" src="services/userService.js"></script>
+        
+        <!-- Icon pack -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
+    </body>
+</html>

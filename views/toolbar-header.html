@@ -1,0 +1,28 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button hide-gt-md class="md-icon-button" ng-click="mc.toggleSideNav()">
+            <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+        <h3>
+            Contact Manager
+        </h3>
+    </div>
+</md-toolbar>
+
+<md-fab-speed-dial md-open="false" md-direction="down" class="md-scale md-fab-top-right">
+    <md-fab-trigger>
+        <md-button class="md-fab">
+            <md-icon md-svg-icon="menu"></md-icon>  
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <md-button class="md-fab md-raised md-mini" ng-click="mc.showContactOptions($event)">
+            <ng-md-icon icon="face"></ng-md-icon>
+            <md-tooltip md-direction="left">Contact</md-tooltip>
+        </md-button>
+        <md-button class="md-fab md-raised md-mini" ng-click="mc.clearNotes($event)">
+            <ng-md-icon icon="clear_all"></ng-md-icon>
+            <md-tooltip md-direction="left">Clear all notes</md-tooltip>
+        </md-button>
+    </md-fab-actions>
+</md-fab-speed-dial> 
